@@ -4,45 +4,61 @@ $(document).ready(function(){
 
 
 function loadSlots(){
-
     return $.ajax({
         url: "database.json",
         cache: false,
         dataType: "json",
-        success: function(data){
+        success: fillSlots
+    });
+}
 
-            $("#main").empty();
-            $.each(data.slots, function(i, slot){
 
-                // create Slot
-                var $slot = $("<section />")
-                    .appendTo("#main")
-                    .append("<h3>"+slot.name+"</h3>")
-                    .append("<p class='time'>"+formatTime(slot.begin,slot.end)+"</p>");
+function fillSlots(data){
 
-                // fill AK-Slot
-                if (slot.type === "ak") {
-                    var $akList = $("<ul/>")
-                        .appendTo($slot);
-                    $.each(slot.aks, function(i, ak){
-                        var $ak = $("<li />")
-                            .appendTo($akList)
-                            .text(ak.name)
-                            .append("<span class='info' />");
-                        if (ak.responsible != "") 
-                            $ak.find(".info")
-                                .append(" von ")
-                                .append($("<span class='responsible' />").text(ak.responsible));
-                        if (ak.room != "")
-                            $ak.find(".info")
-                                .append(" in ")
-                                .append($("<span class='room' />").text(ak.room));
-                    });
-                }
+    // html leeren
+    $("#main").empty();
 
+    // hilfsvariablen zur bestimmung des aktuellen/nächsten ak-slots
+    var now = (new Date()).getTime();
+    var current = Number.POSITIVE_INFINITY;
+    var $current = null;
+
+    $.each(data.slots, function(i, slot){
+
+        // create Slot
+        var $slot = $("<section />")
+            .appendTo("#main")
+            .append("<h3>"+slot.name+"</h3>")
+            .append("<p class='time'>"+formatTime(slot.begin,slot.end)+"</p>");
+
+        // current?
+        if( Date.parse(slot.end) > now && Date.parse(slot.end) < current ){
+            current = Date.parse(slot.end);
+            $current = $slot;
+        }
+
+        // fill AK-Slot
+        if (slot.type === "ak") {
+            var $akList = $("<ul/>")
+                .appendTo($slot);
+            $.each(slot.aks, function(i, ak){
+                var $ak = $("<li />")
+                    .appendTo($akList)
+                    .text(ak.name)
+                    .append("<span class='info' />");
+                if (ak.responsible != "") 
+                    $ak.find(".info")
+                        .append(" von ")
+                        .append($("<span class='responsible' />").text(ak.responsible));
+                if (ak.room != "")
+                    $ak.find(".info")
+                        .append(" in ")
+                        .append($("<span class='room' />").text(ak.room));
             });
         }
     });
+
+    if( $current )  $current.addClass("current");
 }
 
 
