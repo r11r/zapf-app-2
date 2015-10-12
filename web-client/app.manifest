@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+CACHE:
+app.html
+app.css
+app.js
+jquery-2.1.4.min.js
+
+NETWORK:
+database.json
+
