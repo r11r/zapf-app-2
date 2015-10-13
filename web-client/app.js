@@ -1,14 +1,45 @@
 $(document).ready(function(){
-    loadSlots();
+    loadSlots(function(data){
+        fillSlots(data);
+        setStatus(setStatus.ONLINE);
+    },function(){
+        setStatus(setStatus.FAILURE);
+    });
 });
 
 
-function loadSlots(){
+function setStatus(stat, msg) {
+    if (stat == 0) {
+        $("#status")
+            .prop("disabled", false)
+            .html("&#8635;");
+    } else if (stat == 1) {
+        $("#status")
+            .prop("disabled", true)
+            .text("offline");
+    } else if (stat == 2) {
+        $("#status")
+            .prop("disabled", true)
+            .text(".. lade ..");
+    } else {
+        $("#status")
+            .prop("disabled", true)
+            .text("Fehler");
+    }
+}
+setStatus.ONLINE = 0;
+setStatus.OFFLINE = 1;
+setStatus.LOADING = 2;
+setStatus.FAILURE = 3;
+
+
+function loadSlots(successF, errorF){
     return $.ajax({
         url: "database.json",
         cache: false,
         dataType: "json",
-        success: fillSlots
+        success: successF,
+        error: errorF
     });
 }
 

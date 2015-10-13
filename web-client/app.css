@@ -3,11 +3,13 @@
  */
 
 /* normalization */
-html, body, div, section, nav, h1, h2, h3, h4, h5, h6, p, ul, li {
+html, body, div, section, nav, h1, h2, h3, h4, h5, h6, p, ul, li, button {
     display: block;
     margin: 0;
     padding: 0;
     font-size: 1em;
+    background: none;
+    color: inherit;
 }
 
 
@@ -36,7 +38,7 @@ body {
 #menubar > nav {
     display: block;
     position: absolute;
-    left: 1.5em;
+    left: 1em;
     top: 1em;
     height: 2em;
     width: 2em;
@@ -61,6 +63,21 @@ body {
     top: 0.7em;
     left: 3em;
     font-size: 1.2em;
+}
+
+#menubar #status {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 2rem;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+    border: #fff solid 1px;
+    border-radius: 0.5em;
+}
+
+#menubar #status:disabled {
+    border: none;
 }
 
 #main > section {
