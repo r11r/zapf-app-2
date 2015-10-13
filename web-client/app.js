@@ -1,9 +1,16 @@
 $(document).ready(function(){
-    loadSlots(function(data){
-        fillSlots(data);
-        setStatus(setStatus.ONLINE);
-    },function(){
-        setStatus(setStatus.FAILURE);
+    
+    // Seite so schnell wie möglich befüllen
+    if (localStorage.zapfAppData) refreshHTML();
+    
+    // und dann aktualisieren
+    if (navigator.onLine) refreshData();
+    else setStatus(setStatus.OFFLINE);
+
+    // refresh button aktivieren
+    $("#status").click(function(){
+        if ($("#status").prop("disabled")) return;
+        refreshData();    
     });
 });
 
@@ -33,18 +40,35 @@ setStatus.LOADING = 2;
 setStatus.FAILURE = 3;
 
 
-function loadSlots(successF, errorF){
+function refreshData(){
+    setStatus(setStatus.LOADING);
     return $.ajax({
         url: "database.json",
         cache: false,
-        dataType: "json",
-        success: successF,
-        error: errorF
+        dataType: "text",
+        success: function(data){
+            localStorage.zapfAppData = data;
+            refreshHTML();
+            setStatus(setStatus.ONLINE);
+        },
+        error: function(jqXHR, msg){
+            setStatus(setStatus.FAILURE, msg);
+        }
     });
 }
 
 
-function fillSlots(data){
+function refreshHTML(){
+
+    // daten auslesen
+    var data;
+    try {
+        data = $.parseJSON(localStorage.zapfAppData);
+    } catch (ex) {
+        alert("Corrupted localStorage Data");
+        return;
+    }
+    
 
     // html leeren
     $("#main").empty();

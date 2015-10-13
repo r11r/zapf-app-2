@@ -74,10 +74,12 @@ body {
     box-sizing: border-box;
     border: #fff solid 1px;
     border-radius: 0.5em;
+    cursor: pointer;
 }
 
 #menubar #status:disabled {
     border: none;
+    cursor: default;
 }
 
 #main > section {
