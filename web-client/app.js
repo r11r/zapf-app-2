@@ -12,6 +12,17 @@ $(document).ready(function(){
         if ($("#status").prop("disabled")) return;
         refreshData();    
     });
+
+    // neuladen, wenn Internetverbindung neu hergestellt wird
+    window.addEventListener("online", function(){
+        // ändert selber den status ...
+        refreshData();
+    });
+
+    // refresh button deaktivieren, wenn die seite offline ist
+    window.addEventListener("offline", function(){
+        setStatus(setStatus.OFFLINE);
+    });
 });
 
 
@@ -32,6 +43,7 @@ function setStatus(stat, msg) {
         $("#status")
             .prop("disabled", true)
             .text("Fehler");
+        alert(msg);
     }
 }
 setStatus.ONLINE = 0;
