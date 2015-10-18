@@ -95,7 +95,7 @@ function refreshHTML(){
         // create Slot
         var $slot = $("<section />")
             .appendTo("#main")
-            .append("<h3>"+slot.name+"</h3>")
+            .append($("<h3/>").text(slot.name))
             .append("<p class='time'>"+formatTime(slot.begin,slot.end)+"</p>");
 
         // current?
@@ -121,6 +121,11 @@ function refreshHTML(){
                     $ak.find(".info")
                         .append(" in ")
                         .append($("<span class='room' />").text(ak.room));
+                if (ak.url != "")
+                    $ak.append(
+                        $("<span class='overlay'>")
+                            .append($("<a>[Wiki]</a>").attr("href", ak.url))
+                    );
             });
         }
     });
