@@ -5,6 +5,8 @@ app.html
 app.css
 app.js
 jquery-2.1.4.min.js
+assets/logo-favicon.ico
+assets/logo-app-192.png
 
 NETWORK:
 database.json

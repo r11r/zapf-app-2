@@ -124,7 +124,7 @@ function refreshHTML(){
                 if (ak.url != "")
                     $ak.append(
                         $("<span class='overlay'>")
-                            .append($("<a>[Wiki]</a>").attr("href", ak.url))
+                            .append($("<a target='_blank'>[Wiki]</a>").attr("href", ak.url))
                     );
             });
         }

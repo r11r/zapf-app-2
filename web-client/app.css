@@ -150,3 +150,7 @@ body {
 #main > section li:hover .overlay {
     display: block;
 }
+
+#main > section .overlay a {
+    color: #137390;
+}
