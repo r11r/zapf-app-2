@@ -58,7 +58,6 @@
         <script>
             $(document).ready(function(){
                 $("#req-send").click(function(){
-                    //alert($("#req-data").val());
                     $.ajax({
                         url: $("#req-url").val(),
                         method: "POST",
@@ -66,12 +65,12 @@
                         async: false,
                         dataType: "text",
                         success: function(data, textStatus, jqXHR){
-                            $("#res-code").html(jqXHR.status + " " + jqXHR.statusText);
-                            $("#res-data").html(data);
+                            $("#res-code").text(jqXHR.status + " " + jqXHR.statusText);
+                            $("#res-data").text(data);
                         },
                         error: function(jqXHR, textStatus) {
-                            $("#res-code").html(jqXHR.status + " " + jqXHR.statusText);
-                            $("#res-data").html(textStatus);
+                            $("#res-code").text(jqXHR.status + " " + jqXHR.statusText);
+                            $("#res-data").text(textStatus);
                         },
                     });
                 });
