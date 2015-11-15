@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZaPF-API Tester</title>
+        <style type="text/css">
+            body {
+                margin: 0 auto;
+                width: 1080px;
+                border-spacing: 40px;
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: -20px;
+            }
+            body > div > * {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+                box-sizing: border-box;
+                min-height: 20px;
+            }
+            #request, #response {
+                display: table-cell;
+                width: 480px;
+            }
+            #response {
+                margin-left: 40px;
+            }
+            #req-url {
+                height: 35px;
+            }
+            #req-data {
+                height: 400px;
+            }
+            #res-code {
+                padding: 7px;
+                height: 35px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>ZaPF-API Tester (WIP)</h1>
+        <div id="request">
+            <label for="req-url">URL:</label>
+            <input id="req-url" />
+            <label for="req-data">Request Data:</label> 
+            <textarea id="req-data"></textarea>
+            <button id="req-send">Request!</button>
+        </div>
+        <div id="response">
+            <p>Status</p>
+            <p id="res-code">000</p>
+            <p>Response Data:</p>
+            <pre id="res-data"></pre>
+        </div>
+        <script type="application/javascript" src="./web-client/jquery-2.1.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#req-send").click(function(){
+                    //alert($("#req-data").val());
+                    $.ajax({
+                        url: $("#req-url").val(),
+                        method: "POST",
+                        data: $("#req-data").val(),
+                        async: false,
+                        dataType: "text",
+                        success: function(data, textStatus, jqXHR){
+                            $("#res-code").html(jqXHR.status + " " + jqXHR.statusText);
+                            $("#res-data").html(data);
+                        },
+                        error: function(jqXHR, textStatus) {
+                            $("#res-code").html(jqXHR.status + " " + jqXHR.statusText);
+                            $("#res-data").html(textStatus);
+                        },
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
+
