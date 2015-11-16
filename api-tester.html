@@ -61,6 +61,7 @@
                     $.ajax({
                         url: $("#req-url").val(),
                         method: "POST",
+                        contentType: "text/plain",
                         data: $("#req-data").val(),
                         async: false,
                         dataType: "text",
