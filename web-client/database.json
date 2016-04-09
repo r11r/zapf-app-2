@@ -2,9 +2,27 @@
     "name": "ZaPF App Database",
     "version": "2.0",
     "slots": [
+	{
+            "begin": "2016-05-04T14:00:00+0200",
+	    "end": "2016-05-04T17:00:00+0200",
+	    "name": "Chilli & Check-in",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-04T17:00:00+0200",
+	    "end": "2016-05-04T23:00:00+0200",
+	    "name": "Begrüßung & Anfangsplenum",
+	    "type": "plenum"
+	},
+	{
+            "begin": "2016-05-05T06:30:00+0200",
+	    "end": "2016-05-05T08:00:00+0200",
+	    "name": "Wecken & Frühstück",
+	    "type": "food"
+	},
         {
-            "begin": "2014-11-21T14:00:00+0100",
-            "end": "2014-11-21T16:00:00+0100",
+            "begin": "2016-05-05T08:00:00+0200",
+            "end": "2016-05-05T10:00:00+0200",
             "name": "Slot I",
             "type": "ak",
             "aks": [
@@ -41,8 +59,8 @@
             ]
         },
         {
-            "begin": "2014-11-21T16:00:00+0100",
-            "end": "2014-11-21T18:00:00+0100",
+            "begin": "2016-05-05T10:30:00+0200",
+            "end": "2016-05-05T12:30:00+0200",
             "name": "Slot II",
             "type": "ak",
             "aks": [
@@ -78,9 +96,15 @@
                 }            
             ]
         },
+	{
+            "begin": "2016-05-05T12:30:00+0200",
+	    "end": "2016-05-05T14:00:00+0200",
+	    "name": "Mittagessen",
+	    "type": "food"
+	},
         {
-            "begin": "2016-11-21T19:00:00+0100",
-            "end": "2016-11-21T21:00:00+0100",
+            "begin": "2016-05-05T14:00:00+0200",
+	    "end": "2016-05-05T16:00:00+0200",
             "name": "Slot III",
             "type": "ak",
             "aks": [
@@ -123,8 +147,8 @@
             ]
         },
         {
-            "begin": "2014-11-22T09:00:00+0100",
-            "end": "2014-11-22T11:00:00+0100",
+            "begin": "2016-05-05T16:30:00+0200",
+            "end": "2016-05-05T18:30:00+0200",
             "name": "Slot IV",
             "type": "ak",
             "aks": [
@@ -172,10 +196,28 @@
                 }            
             ]
         },
+	{
+            "begin": "2016-05-05T18:30:00+0200",
+	    "end": "2016-05-05T20:00:00+0200",
+	    "name": "Abendessen",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-06T06:00:00+0200",
+	    "end": "2016-05-06T09:00:00+0200",
+	    "name": "Wecken & Frühstück",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-06T08:00:00+0200",
+	    "end": "2016-05-06T17:00:00+0200",
+	    "name": "Exkursionen",
+	    "type": "social"
+	},
         {
-            "begin": "2014-11-22T11:00:00+0100",
-            "end": "2014-11-22T13:00:00+0100",
-            "name": "Slot V",
+            "begin": "2014-05-06T15:00:00+0200",
+            "end": "2014-05-06T17:00:00+0200",
+            "name": "Backup-Slot I",
             "type": "ak",
             "aks": [
                 {
@@ -222,10 +264,28 @@
                 }                
             ]
         },
+	{
+            "begin": "2016-05-06T17:00:00+0200",
+	    "end": "2016-05-06T20:30:00+0200",
+	    "name": "Zwischenplenum",
+	    "type": "plenum"
+	},
+	{
+            "begin": "2016-05-06T20:30:00+0200",
+	    "end": "2016-05-06T22:00:00+0200",
+	    "name": "Abendessen",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-07T07:30:00+0200",
+	    "end": "2016-05-07T10:00:00+0200",
+	    "name": "Wecken & Frühstück",
+	    "type": "food"
+	},
         {
-            "begin": "2014-11-22T20:00:00+0100",
-            "end": "2014-11-22T22:00:00+0100",
-            "name": "Backup I",
+            "begin": "2016-05-07T08:00:00+0200",
+            "end": "2016-05-09T10:00:00+0200",
+            "name": "Backup-Slot II",
             "type": "ak",
             "aks": [
                 {
@@ -247,6 +307,132 @@
                     "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_AK-FS-Freundschaften"
                 }
             ]
-        }
+        },
+        {
+            "begin": "2016-05-07T10:00:00+0200",
+            "end": "2016-05-09T12:00:00+0200",
+            "name": "Slot V",
+            "type": "ak",
+            "aks": [
+                {
+                    "name": "Ethik in Forschung und Wissenschaft",
+                    "responsible": "Pady (Konstanz)",
+                    "room": "S1",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_AK_Ethik"
+                },
+                {
+                    "name": "Gremienworkshop",
+                    "responsible": "",
+                    "room": "S2",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_Gremienarbeit"
+                },
+                {
+                    "name": "FS-Freundschaften",
+                    "responsible": "Tobi (HHU)",
+                    "room": "S4",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_AK-FS-Freundschaften"
+                }
+            ]
+        },
+	{
+            "begin": "2016-05-07T12:00:00+0200",
+	    "end": "2016-05-07T13:30:00+0200",
+	    "name": "Mittagessen",
+	    "type": "food"
+	},
+        {
+            "begin": "2016-05-07T13:30:00+0200",
+            "end": "2016-05-09T15:30:00+0200",
+            "name": "Slot VI",
+            "type": "ak",
+            "aks": [
+                {
+                    "name": "Ethik in Forschung und Wissenschaft",
+                    "responsible": "Pady (Konstanz)",
+                    "room": "S1",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_AK_Ethik"
+                },
+                {
+                    "name": "Gremienworkshop",
+                    "responsible": "",
+                    "room": "S2",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_Gremienarbeit"
+                },
+                {
+                    "name": "FS-Freundschaften",
+                    "responsible": "Tobi (HHU)",
+                    "room": "S4",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_AK-FS-Freundschaften"
+                }
+            ]
+        },
+	{
+            "begin": "2016-05-07T16:00:00+0200",
+	    "end": "2016-05-07T18:00:00+0200",
+	    "name": "Fachvortrag",
+	    "type": "social"
+	},
+        {
+            "begin": "2016-05-07T18:00:00+0200",
+            "end": "2016-05-09T20:00:00+0200",
+            "name": "Slot VII",
+            "type": "ak",
+            "aks": [
+                {
+                    "name": "Ethik in Forschung und Wissenschaft",
+                    "responsible": "Pady (Konstanz)",
+                    "room": "S1",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_AK_Ethik"
+                },
+                {
+                    "name": "Gremienworkshop",
+                    "responsible": "",
+                    "room": "S2",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_Gremienarbeit"
+                },
+                {
+                    "name": "FS-Freundschaften",
+                    "responsible": "Tobi (HHU)",
+                    "room": "S4",
+                    "url": "https://vmp.ethz.ch/zapfwiki/index.php/WiSe14_WS_AK-FS-Freundschaften"
+                }
+            ]
+        },
+	{
+            "begin": "2016-05-07T20:00:00+0200",
+	    "end": "2016-05-07T21:30:00+0200",
+	    "name": "Grillen",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-08T07:00:00+0200",
+	    "end": "2016-05-08T08:30:00+0200",
+	    "name": "Wecken & Frühstück",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-08T08:30:00+0200",
+	    "end": "2016-05-08T12:00:00+0200",
+	    "name": "Abschlussplenum - Teil 1",
+	    "type": "plenum"
+	},
+	{
+            "begin": "2016-05-08T11:30:00+0200",
+	    "end": "2016-05-08T12:00:00+0200",
+	    "name": "Kaffe & Kuchen",
+	    "type": "food"
+	},
+	{
+            "begin": "2016-05-08T12:00:00+0200",
+	    "end": "2016-05-08T16:00:00+0200",
+	    "name": "Abschlussplenum - Teil 2",
+	    "type": "plenum"
+	},
+	{
+            "begin": "2016-05-08T16:00:00+0200",
+	    "end": "2016-05-08T18:00:00+0200",
+	    "name": "Checkout",
+	    "type": "food"
+	}
     ]
 }

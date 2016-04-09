@@ -93,7 +93,7 @@ function refreshHTML(){
     $.each(data.slots, function(i, slot){
 
         // create Slot
-        var $slot = $("<section />")
+        var $slot = $("<section class='"+slot.type+"'/>")
             .appendTo("#main")
             .append($("<h3/>").text(slot.name))
             .append("<p class='time'>"+formatTime(slot.begin,slot.end)+"</p>");
